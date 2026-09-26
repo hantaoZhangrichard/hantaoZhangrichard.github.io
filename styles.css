@@ -52,7 +52,7 @@ a {
 
 .page-shell {
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr) auto;
+  grid-template-rows: auto minmax(0, 1fr);
   min-height: 100svh;
   width: min(100%, 1600px);
   margin: 0 auto;
@@ -173,14 +173,7 @@ a {
 }
 
 .detail-heading {
-  display: flex;
-  gap: 18px;
-  align-items: baseline;
-}
-
-.detail-heading span {
-  color: var(--soft);
-  font: 11px/1 var(--mono);
+  display: block;
 }
 
 .detail-heading h2 {
@@ -199,28 +192,6 @@ a {
   line-height: 1.5;
 }
 
-.detail-block ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 20px;
-  margin: 28px 0 0;
-  padding: 20px 0 0;
-  border-top: 1px solid var(--line);
-  list-style: none;
-}
-
-.detail-block li {
-  color: var(--muted);
-  font-family: var(--serif);
-  font-size: clamp(17px, 1.35vw, 21px);
-}
-
-.detail-block li:not(:last-child)::after {
-  content: "·";
-  margin-left: 20px;
-  color: var(--line);
-}
-
 .project-link {
   display: inline-flex;
   gap: 14px;
@@ -233,35 +204,6 @@ a {
   letter-spacing: -0.04em;
   text-decoration-thickness: 1px;
   text-underline-offset: 8px;
-}
-
-.project-link svg {
-  width: 24px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.5;
-  transition: transform 220ms var(--ease);
-}
-
-.project-link:hover svg,
-.project-link:focus-visible svg {
-  transform: translate(3px, -3px);
-}
-
-.site-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 58px;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-  font: 11px/1 var(--mono);
-}
-
-.site-footer p {
-  margin: 0;
 }
 
 :focus-visible {
@@ -307,23 +249,11 @@ a {
     font-size: 15px;
   }
 
-  .detail-block ul {
-    margin-top: 18px;
-    padding-top: 14px;
-  }
-
-  .detail-block li {
-    font-size: 17px;
-  }
-
   .project-link {
     margin-top: 16px;
     font-size: 38px;
   }
 
-  .site-footer {
-    min-height: 42px;
-  }
 }
 
 @media (max-width: 1050px) {
@@ -357,7 +287,7 @@ a {
 
 @media (max-width: 680px) {
   .site-header {
-    min-height: 74px;
+    min-height: 64px;
   }
 
   .brand {
@@ -374,8 +304,8 @@ a {
   }
 
   .home {
-    gap: 70px;
-    padding: 62px 0 72px;
+    gap: 36px;
+    padding: 32px 0;
   }
 
   .introduction h1 {
@@ -389,13 +319,13 @@ a {
 
   .affiliation {
     max-width: 330px;
-    margin-top: 34px;
+    margin-top: 20px;
     font-size: 15px;
   }
 
   .thesis {
-    margin-top: 42px;
-    font-size: clamp(30px, 9vw, 38px);
+    margin-top: 26px;
+    font-size: clamp(28px, 8vw, 34px);
   }
 
   .details {
@@ -403,7 +333,7 @@ a {
   }
 
   .detail-block {
-    padding: 42px 0;
+    padding: 24px 0;
   }
 
   .detail-block + .detail-block {
@@ -412,21 +342,21 @@ a {
     padding-left: 0;
   }
 
-  .detail-block ul {
-    display: block;
+  .detail-heading h2 {
+    font-size: 27px;
   }
 
-  .detail-block li {
-    padding: 5px 0;
+  .detail-block > p {
+    margin-top: 12px;
+    font-size: 15px;
+    line-height: 1.42;
   }
 
-  .detail-block li::after {
-    display: none;
+  .project-link {
+    margin-top: 12px;
+    font-size: 34px;
   }
 
-  .site-footer {
-    min-height: 70px;
-  }
 }
 
 @media (max-width: 420px) {
